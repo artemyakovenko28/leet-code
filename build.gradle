@@ -1,0 +1,24 @@
+plugins {
+    id 'groovy'
+}
+
+group 'com.company'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    constraints {
+        testImplementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.4'
+        testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.0-M3-groovy-3.0'
+    }
+
+    testImplementation group: 'org.codehaus.groovy', name: 'groovy-all', ext: 'pom'
+    testImplementation group: 'org.spockframework', name: 'spock-core'
+}
